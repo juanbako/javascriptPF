@@ -14,72 +14,71 @@
         <h5>Base de datos colaborativa</h5>
     </header>
 
-    <nav class="navbar navbar-expand-lg navbar-light menu_navegacion">
+    <nav class="col-md-12 navbar navbar-expand-lg navbar-light menu_navegacion">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">EspaVerde</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        <a class="nav-link active" id="boton_inicio" aria-current="page" href="/index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Objetivos</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Espacios verdes
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Cargar nuevo espacio</a></li>
-                            <li><a class="dropdown-item" href="#">Buscar espacios</a></li>
-                        </ul>
-                    </li>
+                        <a class="nav-link botonesIndex" id="objetivos" href="#">Objetivos</a>
+                    </li>      
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link botonesIndex" id="contacto" href="#">Contacto</a>
                     </li>
                 </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Buscar</button>
+                </form>
             </div>
         </div>
     </nav>
 
-    <div class ="col-md-10 container text-center">        
-        <div class ="row justify-content-evenly">
-            <div class ="frame col-md-3">
-                <a href="./parques.html">
-                    <img src ="./imagenes/japones1.png">
-                    <div class ="details">
-                        <h5>Parques</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem nunc, sollicitudin a nisi sodales</p>
-                    </div>
-                </a>
-            </div>
+    <nav class="row">    
+        <button class="col-md-1 cargarNuevoEspacioNone btn" id="cargarNuevoEspacio">
+            <a href="./nuevoEspacio.html">Cargar nuevo espacio</a>
+        </button>
+        
 
-            <div class ="frame col-md-3">
-                <a href="./plazas.html">
-                    <img src ="./imagenes/japones2.png">
-                    <div class ="details">
-                        <h5>Plazas</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem nunc, sollicitudin a nisi sodales</p>
-                    </div>
-                </a>
-            </div>
+        <div class ="col-md-10 text-center inicio_triptico">        
+            <div class ="row justify-content-evenly">
+                <div class ="frame col-md-3">
+                    <a href="./parques.html">
+                        <img src ="./imagenes/japones1.png">
+                        <div class ="details">
+                            <h5>Parques</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem nunc, sollicitudin a nisi sodales</p>
+                        </div>
+                    </a>
+                </div>
 
-            <div class ="frame col-md-3">
-                <a href="./jardinesprivados.html">
-                    <img src ="./imagenes/japones3.png">
-                    <div class ="details">
-                        <h5>Jardines privados</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem nunc, sollicitudin a nisi sodales</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>       
+                <div class ="frame col-md-3">
+                    <a href="./plazas.html">
+                        <img src ="./imagenes/japones2.png">
+                        <div class ="details">
+                            <h5>Plazas</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem nunc, sollicitudin a nisi sodales</p>
+                        </div>
+                    </a>
+                </div>
 
-    <script src="./js/espaciosVerdes.js"></script>
+                <div class ="frame col-md-3">
+                    <a href="./jardinesprivados.html">
+                        <img src ="./imagenes/japones3.png">
+                        <div class ="details">
+                            <h5>Jardines privados</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem nunc, sollicitudin a nisi sodales</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>  
+</nav>     
+
     <script src="./js/bootstrap.js"> </script>
+    <script src="./js/domIndex.js"></script>
 </body>
 </html>

@@ -38,7 +38,26 @@
 
 .frame:hover .details {
   transform: translate(-50%, -50%) rotateY(0deg);
-  opacity: 1; }
+  opacity: 1;
+  color: rgba(5, 5, 5, 0.9); }
+
+.cargarNuevoEspacioNone {
+  display: none; }
+
+.cargarNuevoEspacioInline {
+  display: inline-block;
+  border: 2px;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  background-color: rgba(82, 196, 177, 0.6);
+  padding: 15px;
+  text-align: center;
+  font-size: 16px;
+  margin: auto; }
+
+.inicio_triptico {
+  display: inline-block; }
 
 /*---------PARQUES----------*/
 .parques__cards--margin {
