@@ -23,7 +23,7 @@
                         <a class="nav-link active" id="boton_inicio" aria-current="page" href="/index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link botonesIndex" id="objetivos" href="#">Objetivos</a>
+                        <a class="nav-link botonesIndex" id="objetivos" href="./espacios.html">Espacios</a>
                     </li>      
                     <li class="nav-item">
                         <a class="nav-link botonesIndex" id="contacto" href="#">Contacto</a>
@@ -38,47 +38,51 @@
     </nav>
 
     <nav class="row">    
-        <button class="col-md-1 cargarNuevoEspacioNone btn" id="cargarNuevoEspacio">
-            <a href="./nuevoEspacio.html">Cargar nuevo espacio</a>
+        <button class="col-md-6 btns_index" id="cargarNuevoEspacio">
+            <a href="#">Cargar nuevo espacio</a>
         </button>
-        
 
-        <div class ="col-md-10 text-center inicio_triptico">        
-            <div class ="row justify-content-evenly">
-                <div class ="frame col-md-3">
-                    <a href="./parques.html">
-                        <img src ="./imagenes/japones1.png">
-                        <div class ="details">
-                            <h5>Parques</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem nunc, sollicitudin a nisi sodales</p>
-                        </div>
-                    </a>
+        <button class="col-md-6 btn btns_index" id="buscarEspacios">
+            <a href="#">Buscar espacios</a>
+        </button>      
+    </nav>
+    
+    <div class="cargarNModal" id="cargarNModal">
+        <div class="modalEspaVerde" id="modalEspacioVerde">
+            <h3>Nuevo Espacio Verde</h3>
+            <form class="centerModal" id="formulario" enctype="text/plain" class="col-md-6">
+                <div class="row">
+                    <label for="inputNombre">Nombre del espacio</label> <input type="text" placeholder="Nombre del espacio" id="inpNombreEspacio" name="nombre" value="">
+                    <label for="inputUbicacion">Ubicacion</label> <input type="text" placeholder="Interseccion de calles" id="inpUbicacion" name="ubicacion" value="">
+                    <label for="inputTamanio">Tamaño</label> <input type="tamaño" id="inpTamanio" placeholder="Ingresa el tamaño en hectareas" name="inputTam" value="">
                 </div>
+                <div class="row">
+                    <label>Es de acceso publico o privado?</label>
+                        <select id="acceso">
+                            <option text="publico">Publico</option>
+                            <option text="privado">Privado</OPtion>
+                        </select>
+                </div>
+                <div class="row">
+                    <label for="instalaciones">Selecciona las instalaciones disponibles en el espacio.</label>
+                        <label for="rdJuegos">Juegos</label> <input type="radio" id="juegos" name="juegos" value="">
+                        <label for="rdMaqEjercicios">Maquinas de ejercicios</label> <input type="radio" id="maqEjercicios" name="maqEjercicios" value="">
+                        <label for="rdBanios">Baños</label> <input type="radio" id="banios" name="banios" value="">
+                        <label for="rdRejas">Rejas</label> <input type="radio" id="rejas" name="rejas" value="">
+                        <label for="rdCanil">Canil</label> <input type="radio" id="canil" name="canil" value="">
+                </div>
+                <div class="row">
+                    <input type="submit" id="NespacioCargado" value="Cargar">
+                    <input type="reset" value="Limpiar">
+                </div>
+            </form>
 
-                <div class ="frame col-md-3">
-                    <a href="./plazas.html">
-                        <img src ="./imagenes/japones2.png">
-                        <div class ="details">
-                            <h5>Plazas</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem nunc, sollicitudin a nisi sodales</p>
-                        </div>
-                    </a>
-                </div>
+        </div>
 
-                <div class ="frame col-md-3">
-                    <a href="./jardinesprivados.html">
-                        <img src ="./imagenes/japones3.png">
-                        <div class ="details">
-                            <h5>Jardines privados</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lorem nunc, sollicitudin a nisi sodales</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>  
-</nav>     
+    </div>
 
     <script src="./js/bootstrap.js"> </script>
     <script src="./js/domIndex.js"></script>
+    <script src="./js/validaciones.js"></script>
 </body>
 </html>

@@ -41,25 +41,57 @@
   opacity: 1;
   color: rgba(5, 5, 5, 0.9); }
 
-.cargarNuevoEspacioNone {
-  display: none; }
-
-.cargarNuevoEspacioInline {
+.btns_index {
   display: inline-block;
   border: 2px;
   border-radius: 12px;
-  color: white;
+  color: #050505;
   text-decoration: none;
-  background-color: rgba(82, 196, 177, 0.6);
-  padding: 15px;
+  background-color: rgba(24, 153, 41, 0.7);
+  padding: 10px;
   text-align: center;
   font-size: 16px;
-  margin: auto; }
+  margin: auto;
+  margin-top: 25px;
+  width: 150px; }
 
 .inicio_triptico {
   display: inline-block; }
+
+/*---------MODAL----------*/
+.cargarNModal {
+  height: 100vh;
+  width: 220vh;
+  background-color: rgba(16, 148, 67, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  text-align: center;
+  opacity: 0; }
+
+.modalVisible {
+  visibility: visible;
+  opacity: 1; }
+
+.modalEspaVerde {
+  background-color: white;
+  width: 500px;
+  height: 600px;
+  border-radius: 12px;
+  text-align: center;
+  padding: 25px; }
+
+.centerModal {
+  text-align: center; }
 
 /*---------PARQUES----------*/
 .parques__cards--margin {
   padding: 10px;
   margin: 15px; }
+
+#nuevoEspacio {
+  justify-content: center; }
