@@ -50,39 +50,52 @@
     <div class="cargarNModal" id="cargarNModal">
         <div class="modalEspaVerde" id="modalEspacioVerde">
             <h3>Nuevo Espacio Verde</h3>
-            <form class="centerModal" id="formulario" enctype="text/plain" class="col-md-6">
+            <form class="centerModal" id="formulario" class="col-md-6">
                 <div class="row">
-                    <label for="inputNombre">Nombre del espacio</label> <input type="text" placeholder="Nombre del espacio" id="inpNombreEspacio" name="nombre" value="">
-                    <label for="inputUbicacion">Ubicacion</label> <input type="text" placeholder="Interseccion de calles" id="inpUbicacion" name="ubicacion" value="">
-                    <label for="inputTamanio">Tamaño</label> <input type="tamaño" id="inpTamanio" placeholder="Ingresa el tamaño en hectareas" name="inputTam" value="">
+                    <label for="inputNombre">Nombre del espacio</label> 
+                    <input type="text" placeholder="Nombre del espacio" id="inpNombreEspacio" name="nombre" value="">
+                    
+                    <label for="inputUbicacion">Ubicacion</label> 
+                    <input type="text" placeholder="Interseccion de calles" id="inpUbicacion" name="ubicacion" value="">
+                    
+                    <label for="inputTamanio">Tamaño</label> 
+                    <input type="text" id="inpTamanio" placeholder="Ingresa el tamaño en hectareas" name="inputTam" value="">
                 </div>
                 <div class="row">
                     <label>Es de acceso publico o privado?</label>
                         <select id="acceso">
-                            <option text="publico">Publico</option>
-                            <option text="privado">Privado</OPtion>
+                            <option value="" disabled selected>Selecciona un acceso</option>
+                            <option value="publico">Publico</option>
+                            <option value="privado">Privado</option>
                         </select>
                 </div>
                 <div class="row">
                     <label for="instalaciones">Selecciona las instalaciones disponibles en el espacio.</label>
-                        <label for="rdJuegos">Juegos</label> <input type="radio" id="juegos" name="juegos" value="">
-                        <label for="rdMaqEjercicios">Maquinas de ejercicios</label> <input type="radio" id="maqEjercicios" name="maqEjercicios" value="">
-                        <label for="rdBanios">Baños</label> <input type="radio" id="banios" name="banios" value="">
-                        <label for="rdRejas">Rejas</label> <input type="radio" id="rejas" name="rejas" value="">
+                        <label for="rdJuegos">Juegos</label> <input type="radio" id="juegos" name="juegos" value="si">
+                        <label for="rdMaqEjercicios">Maquinas de ejercicios</label> <input type="radio" id="maqEjercicios" name="maqEjercicios" value="si">
+                        <label for="rdBanios">Baños</label> <input type="radio" id="banios" name="banios" value="si">
+                        <label for="rdRejas">Rejas</label> <input type="radio" id="rejas" name="rejas" value="si">
                         <label for="rdCanil">Canil</label> <input type="radio" id="canil" name="canil" value="">
-                </div>
+                        </div>
                 <div class="row">
-                    <input type="submit" id="NespacioCargado" value="Cargar">
-                    <input type="reset" value="Limpiar">
+                    <input type="submit" id="NespacioCargado" value="Guardar">
+                    <input id="cerrarForm" type="reset" value="Cerrar">
                 </div>
             </form>
-
         </div>
-
+        
+        <!--HACER QUE ESTO FUNCIONE
+        <div class="errorForm" id="errorForm">
+            <h5>Hay un error en los datos cargados</h5>
+            <button class="btn btn-outline-light" id="arreglarError">Aceptar</button>
+        </div> -->
+        
     </div>
+
+    
+        
 
     <script src="./js/bootstrap.js"> </script>
     <script src="./js/domIndex.js"></script>
-    <script src="./js/validaciones.js"></script>
 </body>
 </html>

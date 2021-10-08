@@ -17,10 +17,10 @@ class MoldeParque {
         if (this.rejas === "si") {this.puntuacionParque--};
         if (this.canil === "si") {this.puntuacionParque++};
 
-        parseInt(this.tamanioHec);//parseando aca las variables la suma del return no funciona, concatena
-        parseInt(this.puntuacionParque);
+        parseFloat(this.tamanioHec);
+        parseFloat(this.puntuacionParque);
         
-        return (this.puntuacionParque = parseInt(this.puntuacionParque) + parseInt(this.tamanioHec));
+        return (this.puntuacionParque = parseFloat(this.puntuacionParque) + parseFloat(this.tamanioHec));
     };
 };
 

@@ -85,8 +85,26 @@
   text-align: center;
   padding: 25px; }
 
+.borde-rojo {
+  border: solid red 2px; }
+
+.borde-verde {
+  border: solid green 2px; }
+
 .centerModal {
   text-align: center; }
+
+.errorForm {
+  width: 250px;
+  height: 100px;
+  color: white;
+  text-decoration: bold;
+  background-color: green;
+  border-radius: 12px;
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  visibility: hidden; }
 
 /*---------PARQUES----------*/
 .parques__cards--margin {
