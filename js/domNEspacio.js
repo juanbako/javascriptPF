@@ -6,7 +6,6 @@ const espacios = JSON.parse(espaciosLS)
 console.log(espacios)
 
 //---ARMAR CARDS CON ESPACIOS
-
 const nuevoEspacio = document.getElementById("nuevoEspacio")
 
 espacios.forEach(espacio => {
@@ -28,7 +27,4 @@ espacios.forEach(espacio => {
                         </div>`
 
     nuevoEspacio.appendChild(cardEspacios)
-});
-
-
-
+})

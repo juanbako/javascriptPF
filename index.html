@@ -50,37 +50,71 @@
     <div class="cargarNModal" id="cargarNModal">
         <div class="modalEspaVerde" id="modalEspacioVerde">
             <h3>Nuevo Espacio Verde</h3>
-            <form class="centerModal" id="formulario" class="col-md-6">
+            <form class="centerModal container" id="formulario">
                 <div class="row">
-                    <label for="inputNombre">Nombre del espacio</label> 
-                    <input type="text" placeholder="Nombre del espacio" id="inpNombreEspacio" name="nombre" value="">
-                    
-                    <label for="inputUbicacion">Ubicacion</label> 
-                    <input type="text" placeholder="Interseccion de calles" id="inpUbicacion" name="ubicacion" value="">
-                    
-                    <label for="inputTamanio">Tamaño</label> 
-                    <input type="text" id="inpTamanio" placeholder="Ingresa el tamaño en hectareas" name="inputTam" value="">
-                </div>
-                <div class="row">
-                    <label>Es de acceso publico o privado?</label>
-                        <select id="acceso">
-                            <option value="" disabled selected>Selecciona un acceso</option>
-                            <option value="publico">Publico</option>
-                            <option value="privado">Privado</option>
-                        </select>
-                </div>
-                <div class="row">
-                    <label for="instalaciones">Selecciona las instalaciones disponibles en el espacio.</label>
-                        <label for="rdJuegos">Juegos</label> <input type="radio" id="juegos" name="juegos" value="si">
-                        <label for="rdMaqEjercicios">Maquinas de ejercicios</label> <input type="radio" id="maqEjercicios" name="maqEjercicios" value="si">
-                        <label for="rdBanios">Baños</label> <input type="radio" id="banios" name="banios" value="si">
-                        <label for="rdRejas">Rejas</label> <input type="radio" id="rejas" name="rejas" value="si">
-                        <label for="rdCanil">Canil</label> <input type="radio" id="canil" name="canil" value="">
+                    <div class="col">
+                        <div>
+                            <div class="row">
+                                <label class="etiquetasForm" for="inputNombre">Nombre del espacio</label> 
+                                <input class="box" type="text" placeholder="Nombre del espacio" id="inpNombreEspacio" name="nombre" value="">
+                            </div>
+                            <div class="row">
+                                <label class="etiquetasForm" for="inputUbicacion">Ubicacion</label> 
+                                <input class="box" type="text" placeholder="Interseccion de calles" id="inpUbicacion" name="ubicacion" value="">
+                            </div>    
+                            <div class="row">
+                                <label class="etiquetasForm" for="inputUbicacion">Barrio</label>
+                                <select class="box" id="barrio" name="barrio">
+                                    <option value="" disabled selected>Selecciona un barrio</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <label class="etiquetasForm" for="inputTamanio">Tamaño</label> 
+                                <input class="box" type="text" id="inpTamanio" placeholder="Ingresa el tamaño en hectareas" name="inputTam" value="">
+                            </div>
                         </div>
-                <div class="row">
-                    <input type="submit" id="NespacioCargado" value="Guardar">
-                    <input id="cerrarForm" type="reset" value="Cerrar">
-                </div>
+                        <div class="row">
+                            <label class="etiquetasForm">Es de acceso publico o privado?</label>
+                                <select class="box" id="acceso">
+                                    <option value="" disabled selected>Selecciona un acceso</option>
+                                    <option value="publico">Publico</option>
+                                    <option value="privado">Privado</option>
+                                </select>
+                        </div>
+                    </div>
+                
+                    <div class="col">
+                        <div class="row instalaciones">
+                            <label class="etiquetasForm" for="instalaciones">Selecciona las instalaciones disponibles en el espacio:</label>
+                            <div>
+                                <label for="rdJuegos">Juegos</label> 
+                                <input type="radio" id="juegos" name="juegos" value="si" onclick="uncheckRadio(this)">
+                            </div>
+                            <div>
+                                <label for="rdMaqEjercicios">Maquinas de ejercicios</label> 
+                                <input type="radio" id="maqEjercicios" name="maqEjercicios" value="si" onclick="uncheckRadio(this)">
+                            </div>
+                            <div>
+                                <label for="rdBanios">Baños</label> 
+                                <input type="radio" id="banios" name="banios" value="si" onclick="uncheckRadio(this)">
+                            </div>
+                            <div>
+                                <label for="rdRejas">Rejas</label> 
+                                <input type="radio" id="rejas" name="rejas" value="si" onclick="uncheckRadio(this)">
+                            </div>
+                            <div>
+                                <label for="rdCanil">Canil</label> 
+                                <input type="radio" id="canil" name="canil" value="si" onclick="uncheckRadio(this)">
+                            </div>    
+                            </div>
+                
+                        <div class="row btnForm">
+                            <input type="reset" value="Limpiar">
+                            <input type="submit" id="NespacioCargado" value="Guardar">
+                            <input id="cerrarForm" type="reset" value="Cerrar">
+                        </div>
+                    </div>    
+                </div>    
             </form>
         </div>
         
@@ -91,9 +125,6 @@
         </div> -->
         
     </div>
-
-    
-        
 
     <script src="./js/bootstrap.js"> </script>
     <script src="./js/domIndex.js"></script>
