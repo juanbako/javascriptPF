@@ -37,7 +37,11 @@ espacios.push(new MoldeParque ("Agronomia", "Av. de los Constituyentes y Baigorr
 espacios.push(new MoldeParque ("Parque Lezama", "Av. Martin Garcia y Av. Paseo Colon", "La Boca", "publico", 5, "si", "si", "si", "no", "no"));
 espacios.push(new MoldeParque ("Jardin Japones", "Av. del Libertador y Av. Casares", "Palermo", "privado", 12, "no", "no", "si", "si", "no"));
 
+console.log(espacios[1].barrio)
 
+localStorage.setItem(`espacios`, JSON.stringify(espacios))
+
+console.log(localStorage.getItem(`espacios`))
 //---MODAL CARGAR NUEVO ESPACIO
 
 const btnNuevoEspacio = document.getElementById("cargarNuevoEspacio");
@@ -71,7 +75,7 @@ const canil = document.getElementById("canil")
 const error = document.getElementById(`errorForm`)
 const arreglar = document.getElementById(`arreglarError`)
 
-//---BARRIOS
+//---SELECT BARRIOS
 const barrios = ["Agronomía", "Almagro", "Balvanera", "Barracas", "Belgrano", "Boedo", "Caballito", "Chacarita", "Coghlan", "Colegiales", "Constitución", "Devoto", "Flores", "Floresta", "La Boca", "La Paternal", "Villa Lugano", "Liniers", "Mataderos", "Monte Castro", "Monserrat", "Nueva Pompeya", "Núñez", "Palermo", "Parque Avellaneda", "Parque Chacabuco", "Parque Chas", "Parque Patricios", "Puerto Madero", "Recoleta", "Retiro", "Saavedra", "San Cristóbal", "San Nicolás", "San Telmo", "Vélez Sársfield", "Versalles", "Villa Crespo", "Villa del Parque", "Villa General Mitre", "Villa Luro", "Villa Ortúzar", "Villa Pueyrredón", "Villa Real", "Villa Riachuelo", "Villa Santa Rita", "Villa Soldati", "Villa Urquiza"];
 
 barrios.forEach((varrio) => {
@@ -111,6 +115,8 @@ function valBarrio () {
         barrio.classList.add(`borde-verde`)
     }
 }
+
+barrio.addEventListener(`blur`, valBarrio);
 
 function valUbicacion () {
     const ubicacion = ubicacionEspacio.value
@@ -197,17 +203,17 @@ formulario.addEventListener(`submit`, (e) => {
     const perros = canil.value
 
     if (nombre.length < 2 || direccion.length < 2 || tamanio <= 0 || acceso == "" || barrioV == "") {
-        console.log(error)
+        //console.log(error)
         }
     else {
         espacios.push(new MoldeParque(nombre, direccion, barrioV, acceso, tamanio, juegos, maquinas, banios, rejas, perros))
         localStorage.setItem(`espacios`, JSON.stringify(espacios))
-        formulario.submit()
+        console.log(localStorage.getItem(`espacios`))
     }
+    formulario.reset()
+    cargarModal.classList.remove("modalVisible") 
 })
 
 console.log(localStorage.getItem(`espacios`))
-
-
-
+console.log(espacios)
 
