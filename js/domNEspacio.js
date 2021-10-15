@@ -23,6 +23,7 @@ espacios.forEach(espacio => {
                                 <p class="card-text">Juegos: ${espacio.instalaciones.juegos}</p>
                                 <p class="card-text">Maquinas de ejercicio: ${espacio.instalaciones.maqEjercicios}</p>
                                 <p class="card-text">Baños: ${espacio.instalaciones.banios}</p>
+                                <p class="card-text">Puntaje: ${espacio.puntuacionParque}</p>
                                 <a href="#" class="btn btn-success">+Info</a>
                             </div>
                         </div>`

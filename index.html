@@ -39,11 +39,11 @@
 
     <nav class="row">    
         <button class="col-md-6 btns_index" id="cargarNuevoEspacio">
-            <a href="#">Cargar nuevo espacio</a>
+            <a>Cargar nuevo espacio</a>
         </button>
 
         <button class="col-md-6 btn btns_index" id="buscarEspacios">
-            <a href="#">Buscar espacios</a>
+            <a>Buscar espacios</a>
         </button>      
     </nav>
     
@@ -117,16 +117,18 @@
                 </div>    
             </form>
         </div>
-        
-        <!--HACER QUE ESTO FUNCIONE
-        <div class="errorForm" id="errorForm">
+
+        <div class="errorAlert" id="errorVisible">
             <h5>Hay un error en los datos cargados</h5>
-            <button class="btn btn-outline-light" id="arreglarError">Aceptar</button>
-        </div> -->
-        
+            <button class="btn btn-outline-light" id="btnError">Aceptar</button>
+        </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"> </script>
     <script src="./js/bootstrap.js"> </script>
     <script src="./js/domIndex.js"></script>
+    <script src="./js/jQ.js"></script>
+    
+    
 </body>
 </html>

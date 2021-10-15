@@ -8,10 +8,11 @@ class MoldeParque {
         this.instalaciones = { juegos: juegos, maqEjercicios: maqEjercicios, banios: banios };
         this.rejas = rejas;
         this.canil = canil;
-        this.puntuacionParque = 0
+        this.puntuacionParque = 0 
     }
 
-    puntuacion () {
+    puntuacion () { 
+
         if (this.acceso === "publico") {this.puntuacionParque++};
         if (this.instalaciones.juegos === "si") {this.puntuacionParque++};
         if (this.instalaciones.maqEjercicios === "si" ) {this.puntuacionParque++};
@@ -71,9 +72,6 @@ const maqEjercicios = document.getElementById("maqEjercicios")
 const baniosPubl = document.getElementById("banios")
 const enrejado = document.getElementById("rejas")
 const canil = document.getElementById("canil")
-
-const error = document.getElementById(`errorForm`)
-const arreglar = document.getElementById(`arreglarError`)
 
 //---SELECT BARRIOS
 const barrios = ["Agronomía", "Almagro", "Balvanera", "Barracas", "Belgrano", "Boedo", "Caballito", "Chacarita", "Coghlan", "Colegiales", "Constitución", "Devoto", "Flores", "Floresta", "La Boca", "La Paternal", "Villa Lugano", "Liniers", "Mataderos", "Monte Castro", "Monserrat", "Nueva Pompeya", "Núñez", "Palermo", "Parque Avellaneda", "Parque Chacabuco", "Parque Chas", "Parque Patricios", "Puerto Madero", "Recoleta", "Retiro", "Saavedra", "San Cristóbal", "San Nicolás", "San Telmo", "Vélez Sársfield", "Versalles", "Villa Crespo", "Villa del Parque", "Villa General Mitre", "Villa Luro", "Villa Ortúzar", "Villa Pueyrredón", "Villa Real", "Villa Riachuelo", "Villa Santa Rita", "Villa Soldati", "Villa Urquiza"];
@@ -203,15 +201,15 @@ formulario.addEventListener(`submit`, (e) => {
     const perros = canil.value
 
     if (nombre.length < 2 || direccion.length < 2 || tamanio <= 0 || acceso == "" || barrioV == "") {
-        //console.log(error)
+        errorFormulario()
         }
     else {
         espacios.push(new MoldeParque(nombre, direccion, barrioV, acceso, tamanio, juegos, maquinas, banios, rejas, perros))
         localStorage.setItem(`espacios`, JSON.stringify(espacios))
         console.log(localStorage.getItem(`espacios`))
+        cargarModal.classList.remove("modalVisible")
     }
     formulario.reset()
-    cargarModal.classList.remove("modalVisible") 
 })
 
 console.log(localStorage.getItem(`espacios`))

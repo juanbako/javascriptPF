@@ -109,30 +109,6 @@
 	text-align: center;
 }
 
-.errorForm {
-	width: 250px;
-	height: 100px;
-	color: white;
-	text-decoration: bold;
-	background-color: green;
-	border-radius: 12px;
-	text-align: center;
-	padding: 15px;
-	position: fixed;
-	visibility: hidden;
-}
-
-/*---------PARQUES----------*/
-.parques__cards--margin {
-    padding: 10px;
-    margin: 15px;
-}
-
-#nuevoEspacio {
-	justify-content: center;
-}
-
-//---PRUEBAS
 .etiquetasForm {
 	text-align: left;
 }
@@ -157,4 +133,33 @@
 		width: 100px;
 		margin: 15px;
 	}
+}
+
+/*---------PARQUES----------*/
+.parques__cards--margin {
+    padding: 10px;
+    margin: 15px;
+}
+
+#nuevoEspacio {
+	justify-content: center;
+}
+
+//---PRUEBAS
+.visible {
+	background-color: rgb(92, 25, 25);
+	width: 300px;
+	height: 150px;
+	border-radius: 12px;
+	text-align: center;
+	color: white;
+	padding: 15px;
+	position: fixed;
+	z-index: 3;
+	display: block;
+	border: solid rgb(117, 117, 117) 2px;
+}
+
+.errorAlert {
+	display: none;
 }
