@@ -8,7 +8,7 @@ class MoldeParque {
         this.instalaciones = { juegos: juegos, maqEjercicios: maqEjercicios, banios: banios };
         this.rejas = rejas;
         this.canil = canil;
-        this.puntuacionParque = 0 
+        this.puntuacionParque = 0;
     }
 
     puntuacion () { 
@@ -24,21 +24,25 @@ class MoldeParque {
         parseFloat(this.puntuacionParque);
         
         return (this.puntuacionParque = parseFloat(this.puntuacionParque) + parseFloat(this.tamanioHec));
-    };
+    }
+    
 };
 
 //---ARRAYS
-
 espacios = [];
 
 espacios.push(new MoldeParque ("Avellaneda", "Av. Directorio y Av. Lacarra", "Mataderos", "publico", 10, "si", "si", "no", "si", "no"));
-espacios.push(new MoldeParque ("Plaza Velez Sarfield", "Bahia Blaca y Av. Avellaneda", "Floresta", "publico", 1, "si", "si", "no", "si", "no"));
+espacios.push(new MoldeParque ("Plaza Velez Sarfield", "Bahia Blanca y Av. Avellaneda", "Floresta", "publico", 1, "si", "si", "no", "si", "no"));
 espacios.push(new MoldeParque ("Plaza Arenales", "Chivilcoy y Nueva York", "Devoto", "publico", 4, "si", "si", "no", "no", "no"));
-espacios.push(new MoldeParque ("Agronomia", "Av. de los Constituyentes y Baigorria", "Agronomia", "publico", 16, "si", "si", "si", "si", "si"));
+espacios.push(new MoldeParque ("Agronomia", "Av. San Martin y Nogoya", "Agronomia", "publico", 16, "si", "si", "si", "si", "si"));
 espacios.push(new MoldeParque ("Parque Lezama", "Av. Martin Garcia y Av. Paseo Colon", "La Boca", "publico", 5, "si", "si", "si", "no", "no"));
 espacios.push(new MoldeParque ("Jardin Japones", "Av. del Libertador y Av. Casares", "Palermo", "privado", 12, "no", "no", "si", "si", "no"));
 
-console.log(espacios[1].barrio)
+espacios.forEach(espacio => {
+    espacio.puntuacion()
+});
+
+console.log(espacios[5].puntuacionParque)
 
 localStorage.setItem(`espacios`, JSON.stringify(espacios))
 
@@ -202,6 +206,7 @@ formulario.addEventListener(`submit`, (e) => {
 
     if (nombre.length < 2 || direccion.length < 2 || tamanio <= 0 || acceso == "" || barrioV == "") {
         errorFormulario()
+        cerrarError()
         }
     else {
         espacios.push(new MoldeParque(nombre, direccion, barrioV, acceso, tamanio, juegos, maquinas, banios, rejas, perros))
