@@ -12,7 +12,7 @@ class MoldeParque {
     }
 
     puntuacion () { 
-
+        this.puntuacionParque = 0
         if (this.acceso === "publico") {this.puntuacionParque++};
         if (this.instalaciones.juegos === "si") {this.puntuacionParque++};
         if (this.instalaciones.maqEjercicios === "si" ) {this.puntuacionParque++};
@@ -34,13 +34,12 @@ espacios = [];
 espacios.push(new MoldeParque ("Avellaneda", "Av. Directorio y Av. Lacarra", "Mataderos", "publico", 10, "si", "si", "no", "si", "no"));
 espacios.push(new MoldeParque ("Plaza Velez Sarfield", "Bahia Blanca y Av. Avellaneda", "Floresta", "publico", 1, "si", "si", "no", "si", "no"));
 espacios.push(new MoldeParque ("Plaza Arenales", "Chivilcoy y Nueva York", "Devoto", "publico", 4, "si", "si", "no", "no", "no"));
-espacios.push(new MoldeParque ("Agronomia", "Av. San Martin y Nogoya", "Agronomia", "publico", 16, "si", "si", "si", "si", "si"));
+espacios.push(new MoldeParque ("Agronomia", "Av. San Martin y Nogoya", "Agronomía", "publico", 16, "si", "si", "si", "si", "si"));
 espacios.push(new MoldeParque ("Parque Lezama", "Av. Martin Garcia y Av. Paseo Colon", "La Boca", "publico", 5, "si", "si", "si", "no", "no"));
 espacios.push(new MoldeParque ("Jardin Japones", "Av. del Libertador y Av. Casares", "Palermo", "privado", 12, "no", "no", "si", "si", "no"));
 
 espacios.forEach(espacio => {
-    espacio.puntuacion()
-});
+    espacio.puntuacion()})
 
 console.log(espacios[5].puntuacionParque)
 
@@ -88,6 +87,9 @@ barrios.forEach((varrio) => {
     barrio.appendChild(opciones)
 })
 
+localStorage.setItem(`barrios`, JSON.stringify(barrios))
+
+console.log(localStorage.getItem(`barrios`))
 //---DESCHECKEAR RADIO BTNs
 var era;
 var previo=null;
@@ -210,6 +212,10 @@ formulario.addEventListener(`submit`, (e) => {
         }
     else {
         espacios.push(new MoldeParque(nombre, direccion, barrioV, acceso, tamanio, juegos, maquinas, banios, rejas, perros))
+
+        espacios.forEach(espacio => {
+            espacio.puntuacion()})
+
         localStorage.setItem(`espacios`, JSON.stringify(espacios))
         console.log(localStorage.getItem(`espacios`))
         cargarModal.classList.remove("modalVisible")

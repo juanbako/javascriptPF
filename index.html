@@ -16,35 +16,32 @@
 
     <nav class="col-md-12 navbar navbar-expand-lg navbar-light menu_navegacion">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">EspaVerde</a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" id="boton_inicio" aria-current="page" href="/index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link botonesIndex" id="objetivos" href="./espacios.html">Espacios</a>
-                    </li>      
+                        <a class="nav-link" id="objetivos" href="./espacios.html">Espacios</a>
+                    </li>     
                     <li class="nav-item">
-                        <a class="nav-link botonesIndex" id="contacto" href="#">Contacto</a>
+                        <a class="nav-link" id="contacto" href="#">Contacto</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit">Buscar</button>
-                </form>
             </div>
         </div>
     </nav>
 
-    <nav class="row">    
-        <button class="col-md-6 btns_index" id="cargarNuevoEspacio">
-            <a>Cargar nuevo espacio</a>
-        </button>
+    <nav class="container">
+        <div class="col-md-3">
+            <button class="btns_index" id="cargarNuevoEspacio">
+                <a>Cargar nuevo espacio</a>
+            </button>
 
-        <button class="col-md-6 btn btns_index" id="buscarEspacios">
-            <a>Buscar espacios</a>
-        </button>      
+            <button class="btns_index" id="buscarEspacios">
+                <a class="hipervinculo" href="./buscador.html">Buscar espacios</a>
+            </button> 
+        </div>     
     </nav>
     
     <div class="cargarNModal" id="cargarNModal">
@@ -106,7 +103,7 @@
                                 <label for="rdCanil">Canil</label> 
                                 <input type="radio" id="canil" name="canil" value="si" onclick="uncheckRadio(this)">
                             </div>    
-                            </div>
+                        </div>
                 
                         <div class="row btnForm">
                             <input type="reset" value="Limpiar">
@@ -124,11 +121,13 @@
         </div>
     </div>
 
+    <footer>
+
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"> </script>
     <script src="./js/bootstrap.js"> </script>
     <script src="./js/domIndex.js"></script>
     <script src="./js/jQ.js"></script>
-    
-    
 </body>
 </html>

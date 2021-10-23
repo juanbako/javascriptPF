@@ -1,15 +1,20 @@
 .header {
-    background-color: green;
+    background-color: #008847;
     color: white;
     font-weight: bold;
     padding: 40px;
 
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
 }
 
 .menu_navegacion {
     color:white;
     font-weight: bold;
-    background-color: green;
+    background-color: #018001;
+
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
 }
 
 .frame {
@@ -51,20 +56,27 @@
 .btns_index {
 	display: inline-block;
 	border: 2px;
-	border-radius: 12px;
-	color:rgb(5, 5, 5);
+	color:#FFD687;
 	text-decoration: none;
-	background-color: rgba($color: #189929, $alpha: 0.7);
-	padding: 10px;
+	padding: 5px;
 	text-align: center;
 	font-size: 16px;
-	margin: auto;
-	margin-top: 25px;
-	width: 150px;
+	margin-top: 45px;
+	width: 130px;
+	height: 65px;
+
+	border-radius: 15px;
+	background: linear-gradient(225deg, #00924c, #007a40);
+	box-shadow: -3px 3px 1px #00964e;
 }
 
 .inicio_triptico {
 	display: inline-block;
+}
+
+.hipervinculo {
+	color:#FFD687;
+	text-decoration: none;
 }
 
 /*---------MODAL----------*/
@@ -116,7 +128,26 @@
 .box {
 	width: 350px;
 	height: 40px;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
+	margin-left: 25px;
+}
+
+.box1 {
+	width: 250px;
+	height: 40px;
+	margin-bottom: 10px;
+	margin-left: 25px;
+}
+
+.box2 {
+	width: 200px;
+	height: 40px;
+	margin-bottom: 10px;
+	margin-left: 25px;
+}
+
+.menu_busqueda {
+	display: inline-block;
 }
 
 .instalaciones {
@@ -124,6 +155,17 @@
 	margin-bottom: 20px;
 	padding: 20px;
 	display: inline-block;
+}
+
+.instalaciones2 {
+	width: fit-content;
+	padding: 10px;
+	display: inline-block;
+	border-left: solid 1px rgba(160, 158, 158, 0.5);
+}
+
+.juegosB {
+	border-left: none;
 }
 
 .btnForm {

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Espacios Verdes en CABA</title>
+</head>
+<body class="container">
+    <header class="row header text-center">
+        <h1>Espacios verdes en CABA</h1>
+        <h5>Base de datos colaborativa</h5>
+    </header>
+
+    <nav class="col-md-12 navbar navbar-expand-lg navbar-light menu_navegacion">
+        <div class="container-fluid">
+            
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" id="boton_inicio" aria-current="page" href="/index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="objetivos" href="./espacios.html">Espacios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="buscador" href="/buscador.html">Buscador</a>
+                    </li>  
+                    <li class="nav-item">
+                        <a class="nav-link" id="contacto" href="#">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container menu_busqueda">
+        <div class="col-md-9 menu_busqueda">
+            <div class="row mx-auto">
+                <label class="etiquetasForm" for="">Mostrar por</label>
+                <select class="box1" id="filtro" name="filtro">
+                    <option value="" disabled selected>Selecciona un parametro</option>
+                </select>
+
+                <select class="box2" id="param2" name="param">
+                    <option value="" disabled selected>Seleccionar</option>
+                </select>
+            </div>
+
+            <div class="row mx-auto">
+                <div class="instalaciones2 juegosB">
+                    <label for="rdJuegos">Juegos</label> 
+                    <input type="radio" id="juegosB" name="juegos" value="si" onclick="uncheckRadio(this)">
+                </div>
+                <div class="instalaciones2">
+                    <label for="rdMaqEjercicios">Maq. de ejercicio</label> 
+                    <input type="radio" id="maquinasB" name="maqEjercicios" value="si" onclick="uncheckRadio(this)">
+                </div>
+                <div class="instalaciones2">
+                    <label for="rdBanios">Baños</label> 
+                    <input type="radio" id="baniosB" name="banios" value="si" onclick="uncheckRadio(this)">
+                </div>
+                <div class="instalaciones2">
+                    <label for="rdRejas">Rejas</label> 
+                    <input type="radio" id="rejasB" name="rejas" value="si" onclick="uncheckRadio(this)">
+                </div>
+                <div class="instalaciones2">
+                    <label for="rdCanil">Canil</label> 
+                    <input type="radio" id="canilB" name="canil" value="si" onclick="uncheckRadio(this)">
+                </div>    
+            </div>
+        </div>
+
+        <div class="col-md-2 menu_busqueda">
+            <button class="btns_index" id="buscador2">
+                <a class="hipervinculo" href="#">Buscar espacios</a>
+            </button>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="nuevaBusqueda" class="row">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"> </script>
+    <script src="./js/bootstrap.js"> </script>
+    <script src="./js/buscador.js"></script>
+</body>
+</html>

@@ -26,6 +26,7 @@ espacios.forEach(espacio => {
                                 <p class="card-text">Barrio: ${espacio.barrio}</p>
                                 <p class="card-text">Direccion: ${calle1} y ${calle2}</p> 
                                 <p class="card-text">Acceso: ${espacio.acceso}</p>
+                                <p class="card-text">Tamaño: ${espacio.tamanioHec}</p>
                                 <p class="card-text">Canil: ${espacio.canil}</p>
                                 <p class="card-text">Juegos: ${espacio.instalaciones.juegos}</p>
                                 <p class="card-text">Maquinas de ejercicio: ${espacio.instalaciones.maqEjercicios}</p>
