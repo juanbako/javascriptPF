@@ -1,3 +1,33 @@
+class MoldeParque {
+    constructor (nombre, ubicacion, barrio, accesibilidad, tamanio, juegos, maqEjercicios, banios, rejas, canil) {
+        this.nombre = nombre;
+        this.ubicacion = ubicacion; //direccion 
+        this.barrio = barrio;
+        this.acceso = accesibilidad; //publico o privado
+        this.tamanioHec = tamanio; //en hectareas
+        this.instalaciones = { juegos: juegos, maqEjercicios: maqEjercicios, banios: banios };
+        this.rejas = rejas;
+        this.canil = canil;
+        this.puntuacionParque = 0;
+    }
+
+    puntuacion () { 
+        this.puntuacionParque = 0
+        if (this.acceso === "publico") {this.puntuacionParque++};
+        if (this.instalaciones.juegos === "si") {this.puntuacionParque++};
+        if (this.instalaciones.maqEjercicios === "si" ) {this.puntuacionParque++};
+        if (this.instalaciones.banios === "si") {this.puntuacionParque++};
+        if (this.rejas === "si") {this.puntuacionParque--};
+        if (this.canil === "si") {this.puntuacionParque++};
+
+        parseFloat(this.tamanioHec);
+        parseFloat(this.puntuacionParque);
+        
+        return (this.puntuacionParque = parseFloat(this.puntuacionParque) + parseFloat(this.tamanioHec));
+    }
+    
+};
+
 //---RECUPERAR DATOS DE STORAGE
 let espaciosLS = localStorage.getItem(`espacios`)
 
@@ -46,7 +76,7 @@ function busqOrdenada() {
     
     espaciosX.forEach(espacio => {
         const cardEspacios = document.createElement (`div`)
-        cardEspacios.className = `col-md-4 card shadow-lg p-3 mb-5 bg-body rounded parques__cards--margin`
+        cardEspacios.className = `col-md-3 card shadow-lg p-3 mb-5 bg-body rounded parques__cards--margin`
         cardEspacios.style = `widht: 18rem`
 
         //---API: NORMALIZAR DIRECCION 
@@ -81,12 +111,15 @@ let espaciosX;
 
 let filtrado;
 
+
 //---SELECTOR BUSQUEDA
 filtro.addEventListener(`change`, () => {
     filtrado = filtro.value
     console.log(filtrado)
 
     if (filtrado == `Barrio`) {
+        param2.innerHTML = ""
+
         barrios.forEach((barrio) => {
             const opcionesB = document.createElement(`option`)
             opcionesB.value = barrio
@@ -153,11 +186,12 @@ buscador.addEventListener(`click`, () => {
         baniosB = document.getElementById(`baniosB`)
         rejasB = document.getElementById(`rejasB`)
         canilB = document.getElementById(`canilB`)        
-        
+        let espaciosX
+
         if (juegosB.checked) {
             espaciosX = espacios.filter ((espacio) => espacio.instalaciones.juegos == "si");
             console.log(espaciosX)
-        } 
+        }
         
         if (maquinasB.checked) {
             espaciosX = espacios.filter ((espacio) => espacio.instalaciones.maqEjercicios == "si");
@@ -182,9 +216,3 @@ buscador.addEventListener(`click`, () => {
         busqOrdenada(espaciosX)
     }
 })
-
-
-
-
-//let parquesFiltrados = espacios.filter ( (espacio) => espacio.acceso === "publico")
-//parquesFiltrados = espacios.filter ( (espacio) => espacio.acceso === "publico")
