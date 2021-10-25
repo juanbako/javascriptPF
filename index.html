@@ -19,13 +19,13 @@
             
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" id="boton_inicio" aria-current="page" href="/index.html">Inicio</a>
+                        <a class="nav-link active" id="boton_inicio" aria-current="page" href="/index.html">INICIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="objetivos" href="./espacios.html">Espacios</a>
+                        <a class="nav-link" id="objetivos" href="./buscador.html">Buscar</a>
                     </li>     
                     <li class="nav-item">
-                        <a class="nav-link" id="contacto" href="#">Contacto</a>
+                        <a class="nav-link disabled" id="contacto" href="#">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -34,14 +34,15 @@
 
     <nav class="container">
         <div class="row">
-            <button class="btns_index" id="cargarNuevoEspacio">
-                <a>Cargar nuevo espacio</a>
+            <button class="col-md-2 btns_index" id="cargarNuevoEspacio">
+                <a>Cargar un nuevo espacio</a>
             </button>
 
-            <button class="btns_index" id="buscarEspacios">
-                <a class="hipervinculo" href="./buscador.html">Buscar espacios</a>
-            </button> 
-        </div>     
+            <div class="col-md-10">
+                <div id="nuevoEspacio" class="row">
+                </div>
+            </div>
+        </div>         
     </nav>
     
     <div class="cargarNModal" id="cargarNModal">
