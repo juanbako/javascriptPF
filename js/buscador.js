@@ -17,6 +17,7 @@ const filtro = document.getElementById(`filtro`);
 const param2 = document.getElementById(`param2`);
 const nuevaBusqueda = document.getElementById("nuevaBusqueda")
 const radioBtn_busqueda = document.getElementById("radioBtn_busqueda")
+
 //---DESCHECKEAR RADIO BTNs
 var era;
 var previo=null;
@@ -147,7 +148,7 @@ buscador.addEventListener(`click`, () => {
         console.log(espaciosX)
         busqOrdenada(espaciosX)
     }
-    
+    /*
     if (filtrado == `Instalaciones` ) {
         console.log(`instalaciones`)
         
@@ -161,11 +162,13 @@ buscador.addEventListener(`click`, () => {
         if (juegosB.checked) {
             espaciosX = espacios.filter ((espacio) => espacio.instalaciones.juegos == "si");
             console.log(espaciosX)
+            return espaciosX
         }
         
         if (maquinasB.checked) {
-            espaciosX = espacios.filter ((espacio) => espacio.instalaciones.maqEjercicios == "si");
+            espaciosX = espaciosX.filter ((espacio) => espacio.instalaciones.maqEjercicios == "si");
             console.log(espaciosX)
+            return espaciosX
         } 
         
         if (baniosB.checked) {
@@ -183,6 +186,95 @@ buscador.addEventListener(`click`, () => {
             console.log(espaciosX)
         }
 
+        busqOrdenada(espaciosX)
+    }*/
+    if (filtrado == `Instalaciones` ) {
+        console.log(`instalaciones`)
+        
+        juegosB = document.getElementById("juegosB")
+        maquinasB = document.getElementById("maquinasB")
+        baniosB = document.getElementById("baniosB")
+        rejasB = document.getElementById("rejasB")
+        canilB = document.getElementById("canilB")        
+        let espaciosX = []
+
+        espacioComparacion = []
+    
+        function espaComparar() {
+            const nombreEC = 0
+            const direccionEC = 0
+            const tamanioEC = 0
+            const barrioEC = 0
+            const accesoEC = `Publico`
+
+            if (juegosB.checked) {
+                juegosB.value = `si`
+            } else {
+                juegosB.value = `no`
+            }
+        
+            const juegos = juegosB.value
+            console.log(juegos)
+            
+            if (maquinasB.checked) {
+                maquinasB.value = `si`
+            } else {
+                maquinasB.value = `no`
+            }
+        
+            const maquinas = maquinasB.value
+            console.log(maquinas)
+
+            if (baniosB.checked) {
+                baniosB.value = `si`
+            } else {
+                baniosB.value = `no`
+            }
+        
+            const banios = baniosB.value
+            console.log(banios)
+        
+            if (canilB.checked) {
+                canilB.value = `si`
+            } else {
+                canilB.value = `no`
+            }
+        
+            const canil = canilB.value
+            console.log(canil)
+        
+            if (rejasB.checked) {
+                rejasB.value = `si`
+            } else {
+                rejasB.value = `no`
+            }
+        
+            const rejas = rejasB.value
+            console.log(rejas)
+        
+            espacioComparacion.push(new MoldeParque(nombreEC, direccionEC, barrioEC, accesoEC, tamanioEC, juegos, maquinas, banios, rejas, canil))
+        }
+
+        espaComparar()
+
+        console.log(espacios)
+
+        console.log(espacioComparacion)
+        
+        function comparar(espacios) {
+            for(espacio  of espacios) {
+                if ((espacio.instalaciones.maqEjercicios == espacioComparacion[0].instalaciones.maqEjercicios) &&
+                    (espacio.instalaciones.juegos == espacioComparacion[0].instalaciones.juegos) &&
+                    (espacio.instalaciones.banios == espacioComparacion[0].instalaciones.banios) &&
+                    (espacio.rejas == espacioComparacion[0].rejas) &&
+                    (espacio.canil == espacioComparacion[0].canil) ) {
+                    espaciosX.push(espacio)
+                    console.log(espaciosX)}
+            }
+        }
+        
+        comparar()
+        
         busqOrdenada(espaciosX)
     }
 })

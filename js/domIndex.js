@@ -1,4 +1,4 @@
-class MoldeParque {
+/*class MoldeParque {
     constructor (nombre, ubicacion, barrio, accesibilidad, tamanio, juegos, maqEjercicios, banios, rejas, canil) {
         this.nombre = nombre;
         this.ubicacion = ubicacion; //direccion 
@@ -26,7 +26,7 @@ class MoldeParque {
         return (this.puntuacionParque = parseFloat(this.puntuacionParque) + parseFloat(this.tamanioHec));
     }
     
-};
+};*/
 
 //---CONSTANTES
 const nuevoEspacio = document.getElementById("nuevoEspacio")
@@ -257,7 +257,7 @@ function cargarEspacio() {
                                     <p class="card-text">Maquinas de ejercicio: ${espacio.instalaciones.maqEjercicios}</p>
                                     <p class="card-text">Baños: ${espacio.instalaciones.banios}</p>
                                     <p class="card-text">Puntaje: ${espacio.puntuacionParque}</p>
-                                    <a href="#" class="btn btn-success">+Info</a>
+                                    <a href="#" class="btn btn-success">Mapa</a>
                                 </div>
                             </div>`
 
