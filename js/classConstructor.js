@@ -1,13 +1,14 @@
 class MoldeParque {
-    constructor (nombre, ubicacion, barrio, accesibilidad, tamanio, juegos, maqEjercicios, banios, rejas, canil) {
+    constructor (nombre, ubicacion, barrio, accesibilidad, tamanio, juegos, maqEjercicios, banios, rejas, canil, foto) {
         this.nombre = nombre;
-        this.ubicacion = ubicacion; //direccion 
+        this.ubicacion = ubicacion; 
         this.barrio = barrio;
-        this.acceso = accesibilidad; //publico o privado
-        this.tamanioHec = tamanio; //en hectareas
+        this.acceso = accesibilidad;
+        this.tamanioHec = tamanio;
         this.instalaciones = { juegos: juegos, maqEjercicios: maqEjercicios, banios: banios };
         this.rejas = rejas;
         this.canil = canil;
+        this.foto = foto;
         this.puntuacionParque = 0;
     }
 

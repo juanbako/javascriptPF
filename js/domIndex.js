@@ -1,45 +1,22 @@
-/*class MoldeParque {
-    constructor (nombre, ubicacion, barrio, accesibilidad, tamanio, juegos, maqEjercicios, banios, rejas, canil) {
-        this.nombre = nombre;
-        this.ubicacion = ubicacion; //direccion 
-        this.barrio = barrio;
-        this.acceso = accesibilidad; //publico o privado
-        this.tamanioHec = tamanio; //en hectareas
-        this.instalaciones = { juegos: juegos, maqEjercicios: maqEjercicios, banios: banios };
-        this.rejas = rejas;
-        this.canil = canil;
-        this.puntuacionParque = 0;
-    }
-
-    puntuacion () { 
-        this.puntuacionParque = 0
-        if (this.acceso === "publico") {this.puntuacionParque++};
-        if (this.instalaciones.juegos === "si") {this.puntuacionParque++};
-        if (this.instalaciones.maqEjercicios === "si" ) {this.puntuacionParque++};
-        if (this.instalaciones.banios === "si") {this.puntuacionParque++};
-        if (this.rejas === "si") {this.puntuacionParque--};
-        if (this.canil === "si") {this.puntuacionParque++};
-
-        parseFloat(this.tamanioHec);
-        parseFloat(this.puntuacionParque);
-        
-        return (this.puntuacionParque = parseFloat(this.puntuacionParque) + parseFloat(this.tamanioHec));
-    }
-    
-};*/
-
 //---CONSTANTES
 const nuevoEspacio = document.getElementById("nuevoEspacio")
+
+const btnNuevoEspacio = document.getElementById("cargarNuevoEspacio");
+const cargarModal = document.getElementById("cargarNModal");
+const cerrarModalNEspacio = document.getElementById("NespacioCargado");
+const buscarEspacio = document.getElementById("buscarEspacios");
 
 //---ARRAYS
 espacios = [];
 
-espacios.push(new MoldeParque ("Avellaneda", "Av. Directorio y Av. Lacarra", "Mataderos", "publico", 10, "si", "si", "no", "si", "no"));
-espacios.push(new MoldeParque ("Plaza Velez Sarfield", "Bahia Blanca y Av. Avellaneda", "Floresta", "publico", 1, "si", "si", "no", "si", "no"));
-espacios.push(new MoldeParque ("Plaza Arenales", "Chivilcoy y Nueva York", "Devoto", "publico", 4, "si", "si", "no", "no", "no"));
-espacios.push(new MoldeParque ("Agronomia", "Av. San Martin y Nogoya", "Agronomía", "publico", 16, "si", "si", "si", "si", "si"));
-espacios.push(new MoldeParque ("Parque Lezama", "Av. Martin Garcia y Av. Paseo Colon", "La Boca", "publico", 5, "si", "si", "si", "no", "no"));
-espacios.push(new MoldeParque ("Jardin Japones", "Av. del Libertador y Av. Casares", "Palermo", "privado", 12, "no", "no", "si", "si", "no"));
+const barrios = ["Agronomía", "Almagro", "Balvanera", "Barracas", "Belgrano", "Boedo", "Caballito", "Chacarita", "Coghlan", "Colegiales", "Constitución", "Devoto", "Flores", "Floresta", "La Boca", "La Paternal", "Villa Lugano", "Liniers", "Mataderos", "Monte Castro", "Monserrat", "Nueva Pompeya", "Núñez", "Palermo", "Parque Avellaneda", "Parque Chacabuco", "Parque Chas", "Parque Patricios", "Puerto Madero", "Recoleta", "Retiro", "Saavedra", "San Cristóbal", "San Nicolás", "San Telmo", "Vélez Sársfield", "Versalles", "Villa Crespo", "Villa del Parque", "Villa General Mitre", "Villa Luro", "Villa Ortúzar", "Villa Pueyrredón", "Villa Real", "Villa Riachuelo", "Villa Santa Rita", "Villa Soldati", "Villa Urquiza"];
+
+espacios.push(new MoldeParque ("Avellaneda", "Av. Directorio y Av. Lacarra", "Mataderos", "publico", 10, "si", "si", "no", "si", "no", "./imagenes/avellaneda.png"));
+espacios.push(new MoldeParque ("Plaza Velez Sarfield", "Bahia Blanca y Av. Avellaneda", "Floresta", "publico", 1, "si", "si", "no", "si", "no", "./imagenes/velez_sarfield.png"));
+espacios.push(new MoldeParque ("Plaza Arenales", "Chivilcoy y Nueva York", "Devoto", "publico", 4, "si", "si", "no", "no", "no", "./imagenes/arenales.png"));
+espacios.push(new MoldeParque ("Agronomia", "Av. San Martin y Nogoya", "Agronomía", "publico", 16, "si", "si", "si", "si", "si", "./imagenes/agronomia.png"));
+espacios.push(new MoldeParque ("Parque Lezama", "Av. Martin Garcia y Av. Paseo Colon", "La Boca", "publico", 5, "si", "si", "si", "no", "no", "./imagenes/parque_lezama.png"));
+espacios.push(new MoldeParque ("Jardin Japones", "Av. del Libertador y Av. Casares", "Palermo", "privado", 12, "no", "no", "si", "si", "no", "./imagenes/jardin_japones.png"));
 
 espacios.forEach(espacio => {
     espacio.puntuacion()})
@@ -49,13 +26,8 @@ cargarEspacio()
 localStorage.setItem(`espacios`, JSON.stringify(espacios))
 
 console.log(localStorage.getItem(`espacios`))
+
 //---MODAL CARGAR NUEVO ESPACIO
-
-const btnNuevoEspacio = document.getElementById("cargarNuevoEspacio");
-const cargarModal = document.getElementById("cargarNModal");
-const cerrarModalNEspacio = document.getElementById("NespacioCargado");
-const buscarEspacio = document.getElementById("buscarEspacios");
-
 btnNuevoEspacio.addEventListener(`click`, () => {
     cargarModal.classList.add("modalVisible");
 });
@@ -63,7 +35,6 @@ btnNuevoEspacio.addEventListener(`click`, () => {
 document.getElementById(`cerrarForm`).addEventListener(`click`, () => {
     cargarModal.classList.remove("modalVisible");
 });
-
 
 //---FORMULARIO NUEVO ESPACIO
 const formulario = document.getElementById("formulario")
@@ -80,8 +51,6 @@ const enrejado = document.getElementById("rejas")
 const canil = document.getElementById("canil")
 
 //---SELECT BARRIOS
-const barrios = ["Agronomía", "Almagro", "Balvanera", "Barracas", "Belgrano", "Boedo", "Caballito", "Chacarita", "Coghlan", "Colegiales", "Constitución", "Devoto", "Flores", "Floresta", "La Boca", "La Paternal", "Villa Lugano", "Liniers", "Mataderos", "Monte Castro", "Monserrat", "Nueva Pompeya", "Núñez", "Palermo", "Parque Avellaneda", "Parque Chacabuco", "Parque Chas", "Parque Patricios", "Puerto Madero", "Recoleta", "Retiro", "Saavedra", "San Cristóbal", "San Nicolás", "San Telmo", "Vélez Sársfield", "Versalles", "Villa Crespo", "Villa del Parque", "Villa General Mitre", "Villa Luro", "Villa Ortúzar", "Villa Pueyrredón", "Villa Real", "Villa Riachuelo", "Villa Santa Rita", "Villa Soldati", "Villa Urquiza"];
-
 barrios.forEach((varrio) => {
     const opciones = document.createElement(`option`)
     opciones.value = varrio
@@ -93,6 +62,7 @@ barrios.forEach((varrio) => {
 localStorage.setItem(`barrios`, JSON.stringify(barrios))
 
 console.log(localStorage.getItem(`barrios`))
+
 //---DESCHECKEAR RADIO BTNs
 var era;
 var previo=null;
@@ -208,12 +178,14 @@ formulario.addEventListener(`submit`, (e) => {
 
     const perros = canil.value
 
+    const foto = "./imagenes/nuevo_parque.jpg"
+
     if (nombre.length < 2 || direccion.length < 2 || tamanio <= 0 || acceso == "" || barrioV == "") {
         errorFormulario()
         cerrarError()
         }
     else {
-        espacios.push(new MoldeParque(nombre, direccion, barrioV, acceso, tamanio, juegos, maquinas, banios, rejas, perros))
+        espacios.push(new MoldeParque(nombre, direccion, barrioV, acceso, tamanio, juegos, maquinas, banios, rejas, perros, foto))
 
         espacios.forEach(espacio => {
             espacio.puntuacion()})
@@ -226,7 +198,6 @@ formulario.addEventListener(`submit`, (e) => {
     formulario.reset()
 })
 
-console.log(localStorage.getItem(`espacios`))
 console.log(espacios)
 
 //---ARMAR CARDS CON ESPACIOS
@@ -245,7 +216,7 @@ function cargarEspacio() {
         let calle1 = res.direccionesNormalizadas[0].nombre_calle;
         let calle2 = res.direccionesNormalizadas[0].nombre_calle_cruce;
 
-        cardEspacios.innerHTML = `<img src="./imagenes/nuevoParque.jpg" class="card-img-top" alt="parque">
+        cardEspacios.innerHTML = `<img src="${espacio.foto}" class="card-img-top" alt="parque">
                                 <div class="card-body">
                                     <h5 class="card-title">${espacio.nombre}</h5>
                                     <p class="card-text">Barrio: ${espacio.barrio}</p>
@@ -265,3 +236,4 @@ function cargarEspacio() {
         })
     })
 }
+
