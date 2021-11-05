@@ -28,3 +28,13 @@ class MoldeParque {
     }
     
 };
+
+class Contacto {
+    constructor (nombre, apellido, mail, barrio, mensaje) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.mail = mail;
+        this.barrio = barrio;
+        this.mensaje = mensaje;
+    }
+};

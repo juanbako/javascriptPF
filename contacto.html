@@ -29,4 +29,59 @@
             </ul>
         </div>
     </nav>
+
+    <div style="border: solid 2px black;" class="contacto">
+        <div class="card cardContacto" style="width: 30rem;">
+            <div class="card-body">
+                <h5 class="card-title">Contacto</h5>
+                <form id="formContacto" action="contacto.php" method="GET" enctype="text/plain" class="">
+                    <div class="form-floating mb-3">
+                        <input type="nombre" class="form-control" id="formNombre" placeholder="Ingresa tu nombre" value="">
+                        <label for="floatingInput">Tu nombre</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="apellido" class="form-control" id="formApellido" placeholder="Ingresa tu apellido" value="">
+                        <label for="floatingInput">Tu apellido</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="mail" class="form-control" id="formEmail" placeholder="Ingresa tu mail" value="">
+                        <label for="floatingInput">Tu mail</label>
+                    </div>
+                    
+                    <div class="row barrioSelect">
+                        <label class="" for="barrio">Tu barrio</label>
+                        <select class="box" id="formBarrio" name="barrio">
+                            <option value="" disabled selected>Selecciona tu barrio</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-floating">
+                        <textarea class="form-control textMensaje" placeholder="Tu mensaje" id="formMensaje"></textarea>
+                        <label for="floatingTextarea2">Tu mensaje</label>
+                    </div>
+            
+                    <div class="row">
+                        <button type="button submit" id="enviarBtn" class="btn btn-success">Enviar</button>
+                        <input type="reset" value="Limpiar">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="contBtn" class="row contBtn">
+            <div class="row contactoValido" id="contactoValido">
+                <p>Gracias por escribirnos, en breve nos pondremos en contacto.</p>
+                <button id="btnContacto" type="button" class="row btn btn-outline-success">OK</button>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <script src="./js/bootstrap.js"> </script>
+    <script src="./js/classConstructor.js"></script>
+    <script src="./js/contacto.js"></script>
+</body>
 </html>

@@ -2610,7 +2610,7 @@ textarea.form-control-lg {
 }
 .form-floating > .form-control,
 .form-floating > .form-select {
-  height: calc(3.5rem + 2px);
+  height: calc(3.5rem + 1px);
   line-height: 1.25;
 }
 .form-floating > label {
@@ -4450,8 +4450,9 @@ textarea.form-control-lg {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 0.25rem;
+  margin: 1rem;
 }
 .card > hr {
   margin-right: 0;
@@ -4478,7 +4479,7 @@ textarea.form-control-lg {
 
 .card-body {
   flex: 1 1 auto;
-  padding: 1rem 1rem;
+  padding: 2rem;
 }
 
 .card-title {

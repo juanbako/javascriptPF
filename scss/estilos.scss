@@ -111,6 +111,7 @@
 
 .borde-rojo {
 	border: solid red 2px;
+	
 }
 
 .borde-verde {
@@ -206,4 +207,65 @@
 	display: none;
 }
 
-//---//
+/*---------CONTACTO----------*/
+.contacto {
+	background-image: url(../imagenes/costanera_sur.jpg);
+	background-size: cover;
+	margin: 10px;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+.cardContacto {
+	background-color: rgba($color: #e2dbdb, $alpha: 0.7);
+}
+
+.form-floating {
+	.textMensaje {
+		height: 150px;
+		margin-bottom: 15px;
+	}
+}
+
+.barrioSelect {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.contBtn {
+	height: 100%;
+	width: 100%;
+	background-color: rgba($color: #6da877, $alpha: 0.5);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.contactoValido {
+	height: 150px;
+	width: 250px;
+	background-color: white;
+	position: fixed;
+	top: 350px;
+	left: 675px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 15px;
+	border: solid 2px green;
+	padding: 10px;	
+}
+
+#btnContacto {
+	width: 70px;
+}
+
+#enviarContacto {
+	margin-bottom: 10px;
+}
