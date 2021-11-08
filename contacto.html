@@ -18,7 +18,7 @@
         <div class="container-fluid">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" id="boton_inicio" aria-current="page" href="/index.html">Inicio</a>
+                    <a class="nav-link" id="boton_inicio" aria-current="page" href="./index.html">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="objetivos" href="./buscador.html">Buscar</a>
@@ -62,12 +62,19 @@
                         <label for="floatingTextarea2">Tu mensaje</label>
                     </div>
             
-                    <div class="row">
+                    <div class="row contacBtns mx-auto">
                         <button type="button submit" id="enviarBtn" class="btn btn-success">Enviar</button>
                         <input type="reset" value="Limpiar">
                     </div>
                 </form>
             </div>
+        </div>
+
+        <div id="errorModal" class="row errorModal">
+            <div class="row contactError" id="contactError">
+                <p>Hay un error en los datos ingresados</p>
+                <button id="btnError" type="button" class="row btn btn-warning">OK</button>
+            </div>`
         </div>
 
         <div id="contBtn" class="row contBtn">
@@ -79,7 +86,7 @@
     </div>
 
     
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"> </script>
     <script src="./js/bootstrap.js"> </script>
     <script src="./js/classConstructor.js"></script>
     <script src="./js/contacto.js"></script>

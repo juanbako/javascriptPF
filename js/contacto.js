@@ -24,6 +24,8 @@ const email = document.getElementById(`formEmail`)
 const mensaje = document.getElementById(`formMensaje`)
 const contBtn = document.getElementById(`contBtn`)
 const btnContacto = document.getElementById(`btnContacto`)
+const btnError = document.getElementById(`btnError`)
+const errorModal = document.getElementById(`errorModal`)
 
 var contacto = [];
 
@@ -62,23 +64,29 @@ mensaje.addEventListener(`change`, () => {
 
 formContacto.addEventListener(`submit`, (e) => {
     e.preventDefault()
-        console.log(`submitea`)
-        
+
     if (nombre.value.length >= 2 && apellido.value.length >= 2 & email.value.length >= 5 && mensaje.value.length >= 5) {
         contacto.push(new Contacto (nombre.value, apellido.value, email.value, barrio.value, mensaje.value))
-        console.log(contacto)
         
-            localStorage.setItem(`contacto`, JSON.stringify(contacto))
+        localStorage.setItem(`contacto`, JSON.stringify(contacto))
         console.log(localStorage.getItem(`contacto`))
 
         contBtn.style.visibility = "visible"
         contBtn.style.opacity = "1"
 
         formContacto.reset()
-    } else {alert(`Hay un error en los datos del formulario`)}
+    } else {  
+        errorModal.style.visibility = "visible"
+        errorModal.style.opacity = "1"
+    }
 })
 
 btnContacto.addEventListener(`click`, () => {
     contBtn.style.visibility = "hidden"
     contBtn.style.opacity = "0"
+})
+
+btnError.addEventListener(`click`, () => {
+    errorModal.style.visibility = "hidden"
+    errorModal.style.opacity = "0"
 })

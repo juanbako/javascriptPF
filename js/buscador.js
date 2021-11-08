@@ -72,7 +72,7 @@ function busqOrdenada() {
                                             <p class="card-text">Maquinas de ejercicio: ${espacio.instalaciones.maqEjercicios}</p>
                                             <p class="card-text">Baños: ${espacio.instalaciones.banios}</p>
                                             <p class="card-text">Puntaje: ${espacio.puntuacionParque}</p>
-                                            <a href="#" class="btn btn-success">+Info</a>
+                                            <p class="card-text">Tiene rejas: ${espacio.rejas}</p>
                                         </div>
                                     </div>`
 
@@ -173,9 +173,19 @@ filtro.addEventListener(`change`, () => {
             
                 param2.appendChild(opcionesB)
             })}
-            else {(filtrado == `Instalaciones`) 
+            else if (filtrado == `Instalaciones`) {
                 param2.innerHTML = ""
                 }
+        
+    if (filtrado == `Instalaciones`) { 
+    btnInstalaciones.classList.remove(`btnInstalaciones`)
+    } else if (filtrado !== `Instalaciones`) {
+        btnInstalaciones.classList.add(`btnInstalaciones`)
+    }
+
+    if (filtrado == `Tamaño`) {
+        param2.innerHTML = ""
+    }
 })
 
 //---BUSQUEDA
@@ -215,8 +225,6 @@ buscador.addEventListener(`click`, () => {
     }
     
     if (filtrado == `Instalaciones` ) {
-        console.log(`instalaciones`)
-        console.log(espacios)
         espaciosX = [];
 
         espaComparar()

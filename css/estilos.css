@@ -169,6 +169,9 @@
   display: block;
   border: solid #757575 2px; }
 
+.btnInstalaciones {
+  visibility: hidden; }
+
 .errorAlert {
   display: none; }
 
@@ -222,5 +225,39 @@
 #btnContacto {
   width: 70px; }
 
-#enviarContacto {
+#enviarBtn {
   margin-bottom: 10px; }
+
+.contacBtns {
+  margin-bottom: 10px;
+  width: 150px; }
+
+.errorModal {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(223, 208, 9, 0.5);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0; }
+
+.contactError {
+  height: 150px;
+  width: 250px;
+  background-color: white;
+  color: red;
+  font-weight: bold;
+  position: fixed;
+  top: 350px;
+  left: 675px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+  border: solid 2px black;
+  padding: 10px; }

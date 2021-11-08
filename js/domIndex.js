@@ -66,6 +66,7 @@ console.log(localStorage.getItem(`barrios`))
 //---DESCHECKEAR RADIO BTNs
 var era;
 var previo=null;
+
 function uncheckRadio(rbutton){
     if(previo &&previo!=rbutton){previo.era=false;}
     if(rbutton.checked==true && rbutton.era==true){rbutton.checked=false;}
@@ -228,12 +229,13 @@ function cargarEspacio() {
                                     <p class="card-text">Maquinas de ejercicio: ${espacio.instalaciones.maqEjercicios}</p>
                                     <p class="card-text">Baños: ${espacio.instalaciones.banios}</p>
                                     <p class="card-text">Puntaje: ${espacio.puntuacionParque}</p>
-                                    <a href="#" class="btn btn-success">Mapa</a>
+                                    <p class="card-text">Tiene rejas: ${espacio.rejas}</p>
                                 </div>
                             </div>`
 
         nuevoEspacio.prepend(cardEspacios)
         })
     })
-}
 
+    console.log(espacios.length)
+}
