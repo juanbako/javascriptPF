@@ -175,7 +175,9 @@ filtro.addEventListener(`change`, () => {
             })}
             else if (filtrado == `Instalaciones`) {
                 param2.innerHTML = ""
-                }
+                } else if (filtrado == `Puntuacion`) {
+                    param2.innerHTML = ""
+                    }
         
     if (filtrado == `Instalaciones`) { 
     btnInstalaciones.classList.remove(`btnInstalaciones`)
